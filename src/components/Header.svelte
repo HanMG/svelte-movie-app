@@ -1,20 +1,42 @@
 <script>
     import { link } from 'svelte-spa-router'
     import active from 'svelte-spa-router/active'
+    import Logo from '~/components/Logo.svelte'
+
+    const menus = [
+        {
+            href: '/',
+            name: 'Search',
+            path: '/'
+        },
+        {
+            href: '/movie/tt4520988',
+            name: 'Movie',
+            path: '/movie/*'
+        },
+        {
+            href: '/about',
+            name: 'About',
+            path: '/about'
+        }
+    ]
 </script>
 
 <header>
-    HEADER
-    <a use:link
-        use:active={'/'}
-        href="/">
-        Home
-    </a>
-    <a use:link
-        use:active={'/about'}
-        href="/about">
-        About
-    </a>
+    <Logo />
+    <nav>
+        <ul>
+            {#each menus as {href, name, path} (name) }
+                <li>
+                    <a use:link
+                        use:active={path}
+                        {href}>
+                        {name}
+                    </a>
+                </li>
+            {/each}            
+        </ul>
+    </nav>    
 </header>
 
 <style lang="scss">    
