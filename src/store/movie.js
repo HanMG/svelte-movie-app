@@ -4,8 +4,12 @@ import _uniqBy from 'lodash/uniqBy'
 import { writable, get } from 'svelte/store'
 
 export const movies = writable([])
+export const loading = writable(false)
 
-export async function searchMovies(payload) {
+export async function searchMovies(payload) {    
+    if (get(loading)) return 
+    loading.set(true)
+
     const { title, type, year, number } = payload
     const OMDB_API_KEY = '20f6531a'
 
@@ -28,4 +32,5 @@ export async function searchMovies(payload) {
     }
 
     console.log(get(movies))
+    loading.set(false)
 }
