@@ -17,7 +17,7 @@
         {
             href: '/about',
             name: 'About',
-            path: '/about'
+            path: /^\/about/
         }
     ]
 </script>
