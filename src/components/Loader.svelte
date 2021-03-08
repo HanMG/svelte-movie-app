@@ -30,7 +30,7 @@
             left: 0;
             right: 0;
             margin: auto;
-            &.absoulte {
+            &.absolute {
                 position: absolute;
             }
             &.fixed {

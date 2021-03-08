@@ -10,7 +10,7 @@
             path: '/'
         },
         {
-            href: '/movie/tt4520988',
+            href: '/movie/',
             name: 'Movie',
             path: '/movie/*'
         },
