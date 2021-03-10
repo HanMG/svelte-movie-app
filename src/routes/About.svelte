@@ -9,6 +9,7 @@
     $: name = query.name ||  'HanMoonGoo'    
     $: email = query.email || 'hanmoongoo@gmail.com'
     $: github = query.github || 'https://github.com/HanMG'
+    $: image = query.image || '/assets/GitHub-Mark.png'
 </script>
 
 <div class="user-profile">
@@ -17,7 +18,7 @@
             <img src="/assets/svelte.png" alt="User">
         </div>
         <div class="photo">
-            <img src="/assets/netlify.png" alt="User">
+            <img src={image} alt="User">
         </div>
     </div>
     <div class="details">

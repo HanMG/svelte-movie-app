@@ -1,7 +1,7 @@
 <script>
-    import { link } from 'svelte-spa-router'
+    import { link, push } from 'svelte-spa-router'
     import active from 'svelte-spa-router/active'
-    import Logo from '~/components/Logo.svelte'
+    import Logo from '~/components/Logo.svelte'    
 
     const menus = [
         {
@@ -10,7 +10,7 @@
             path: '/'
         },
         {
-            href: '/movie/',
+            href: '/movie/tt0095016',
             name: 'Movie',
             path: '/movie/*'
         },
@@ -37,7 +37,11 @@
             {/each}            
         </ul>
     </nav>    
-    <div class="user">
+    <div 
+        class="user"
+        on:click={() => {            
+            push('/about?name=Netlify&email=hello@netlify.com&image=%2Fassets%2Fnetlify.png')
+        }}>
         <img src="/assets/svelte.png" alt="User">
     </div>
 </header>

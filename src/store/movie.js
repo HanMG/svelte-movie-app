@@ -12,11 +12,19 @@ export const theMovie = writable({})
 // 검색시 아무것도 안나오거나 에러가 나올때
 export const message = writable('Search for the Movie title')
 
+// 페이지 이동시 영화검색리스트 초기화
+export function initMovies() {
+    movies.set([])
+    message.set('Search for the Movie title')
+    loading.set(false)
+}
+
 // 영화 검색시 가져오는 함수
 export async function searchMovies(payload) {    
     // 반복검색 제어
     if (get(loading)) return 
     loading.set(true)    
+    message.set('')
 
     let total = 0
 
