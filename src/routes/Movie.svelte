@@ -196,6 +196,7 @@
                     margin-right: 32px;
                     @media #{$tablet} {
                         transform: scale(.85);
+                        transform-origin: left;
                     }
                     img {
                         flex-shrink: 0;
