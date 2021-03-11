@@ -55,8 +55,14 @@
         z-index: 10;
         display: flex;
         align-items: flex-end;
+        @media #{$mobile} {
+            padding: 14px 20px;
+        }
         nav {
             margin-left: 40px;
+            @media #{$mobile} {
+                display: none;
+            }
             ul {
                 display: flex;
                 li {
@@ -87,6 +93,9 @@
             right: 40px;
             margin: auto;
             transition: 0.4;
+            @media #{$mobile} {
+                right: 20px;
+            }
             &:hover {
                 background-color: lighten($color--area, 20%);
             }
